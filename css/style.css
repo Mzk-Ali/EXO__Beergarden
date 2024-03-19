@@ -14,6 +14,8 @@ html, body{
     height: 100%;
 }
 
+
+/*----------------------------------HEADER-----------------------------------*/
 .header{
     width: 100%;
     height: 100%;
@@ -24,7 +26,7 @@ html, body{
     background-size: cover;
 }
 
-a{
+a, i{
     text-decoration: none;
     color: inherit;
 }
@@ -53,13 +55,16 @@ nav{
     column-gap: 2em;
 }
 
-.home_section{
+.home_img{
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/*---------------------------------------------------------------------------*/
 
+
+/*-------------------------------Text SECTION--------------------------------*/
 .text_container{
     background-color: rgb(200,156,92);
     text-align: center;
@@ -67,9 +72,18 @@ nav{
     font-weight: bold;
     padding: 50px;
 }
+/*---------------------------------------------------------------------------*/
 
+
+/*-----------------------------TRADITION SECTION-----------------------------*/
 .tradition_section{
+    height: 100vh;
+    width: 100%;
+}
+
+.container_tradition{
     height: 100%;
+    width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -111,7 +125,7 @@ p.description{
     justify-content: center;
     align-items: center;
     padding: 10%;
-/* margin: auto; */
+    background-color: white;
 }
 
 .tradition_div2{
@@ -130,19 +144,20 @@ p.description{
     align-items: center;
 }
 
-main{
-    height: 100%;
-}
+/*---------------------------------------------------------------------------*/
 
-.gallery_img{
+
+
+
+
+
+
+/* -----------------------GALLERY SECTION---------------------------------*/
+.container_gallery{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 1fr;
     /* overflow: hidden; */
-}
-
-.service_section{
-    display: flex;
 }
 
 .container_img{
@@ -151,20 +166,35 @@ main{
     position: relative;
 }
 
-.container_img:hover img{
-    transform: scale(1.1);
+.container_img img{
+    width: 100%;
 }
 
-.container_img:hover .filter_icon{
+.container_img:hover img{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.container_img .filter_icon{
     position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(200,156,92, 0.7);
+    transition: 0.5s;
+    display: none;
+}
+
+.container_img:hover .filter_icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container_img:hover .filter_icon:hover .ri-add-large-line{
+    transform: rotate(180deg);
 }
 
 .ri-add-large-line{
@@ -172,25 +202,46 @@ main{
     transition: 0.5s;
 }
 
+/*---------------------------------------------------------------------------*/
 
-.container_img:hover .ri-add-large-line{
-    transform: rotate(180deg);
+
+
+
+
+/*-------------------------------SERVICE SECTION-----------------------------*/
+
+.container_service{
+    display: flex;
+    gap: 12px;
+    padding: 5% 10%;
+    background-color: white;
 }
 
 .item_service{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-content: center;
+    align-items: center;
 }
 
 .service_img{
     text-align: center;
+    position: relative;
 }
 
 .service_span{
     font-weight: bolder;
 }
+
+.item_service:hover .overlay_service{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgb(200,156,92) 1%, transparent);
+    opacity: 0.4;
+}
+
 
 .item_service:hover .service_span{
     color: rgb(200,156,92);
@@ -198,3 +249,90 @@ main{
 
 
 
+/*---------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------PARALLAXE SECTION-----------------------------*/
+.img_parallaxe{
+    background-image: url(../img/h5-parallax-img-2.jpg);
+    background-size: cover;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: -100;
+}
+
+.content_parallaxe{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 5% 10%;
+}
+
+.p_parallaxe{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+h3{
+    font-size: xx-large;
+}
+
+/*---------------------------------------------------------------------------*/
+
+
+
+
+/*-----------------------------------MAP SECTION-----------------------------*/
+.map_section{
+    height: 90vh;
+}
+
+.container_map{
+    position: relative;
+    height: 100%;
+}
+
+iframe{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1) invert(1);
+    
+}
+
+.overlay_map{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(black, transparent, black);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*---------------------------------------------------------------------------*/
+
+
+
+/*-----------------------------------FOOTER----------------------------------*/
+footer{
+    height: 10vh;
+}
+
+.footer{
+    height: 100%;
+    box-shadow: 100px 90px 100px black;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 10%;
+}
+
+/*---------------------------------------------------------------------------*/
